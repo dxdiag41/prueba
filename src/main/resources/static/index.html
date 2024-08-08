@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cotización de Créditos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Sistema de Cotización de Créditos</h1>
+
+<!-- Sección de Administración de Productos -->
+<section id="productos-section">
+    <h2>Administración de Productos</h2>
+    <form id="producto-form">
+        <input type="hidden" id="producto-id">
+        <input type="text" id="producto-sku" placeholder="SKU" required>
+        <input type="text" id="producto-nombre" placeholder="Nombre" required>
+        <input type="text" id="producto-descripcion" placeholder="Descripción">
+        <input type="number" id="producto-precio" placeholder="Precio" step="0.01" required>
+        <button type="submit">Guardar Producto</button>
+    </form>
+    <ul id="productos-list"></ul>
+</section>
+
+<!-- Sección de Administración de Plazos -->
+<section id="plazos-section">
+    <h2>Administración de Plazos</h2>
+    <form id="plazo-form">
+        <input type="hidden" id="plazo-id">
+        <input type="number" id="plazo-semanas" placeholder="Semanas" required>
+        <input type="number" id="plazo-tasa-normal" placeholder="Tasa Normal" step="0.0001" required>
+        <input type="number" id="plazo-tasa-puntual" placeholder="Tasa Puntual" step="0.0001" required>
+        <button type="submit">Guardar Plazo</button>
+    </form>
+    <ul id="plazos-list"></ul>
+</section>
+
+<!-- Sección de Cotización de Créditos -->
+<section id="cotizacion-section">
+    <h2>Cotización de Créditos</h2>
+    <form id="cotizacion-form">
+        <input type="text" id="cotizacion-sku" placeholder="SKU o Nombre del Producto" required>
+        <select id="cotizacion-plazo" required>
+            <option value="">Seleccione un Plazo</option>
+        </select>
+        <button type="submit">Cotizar</button>
+    </form>
+    <div id="cotizacion-result"></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
